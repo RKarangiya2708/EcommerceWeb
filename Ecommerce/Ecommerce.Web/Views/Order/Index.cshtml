@@ -1,0 +1,101 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .card-plain {
+        width: 1100px;
+    }
+
+    .main-raised {
+        margin-top:40px;
+    }
+
+    #orderTable_wrapper{
+        margin:10px;
+    }
+
+    .paginate_button{
+        margin: 10px;
+    }
+
+    .order-summary{
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        padding: 10px;
+        margin: -3px;
+    }
+
+</style
+<div>
+    <div class="container">
+        <div class="card card-plain">
+            <div class="card-body main main-raised">
+                <h3 class="card-title m-3">Order History</h3>
+                <hr />
+                <div class="table-responsive">
+                    <table id="orderTable" class="table table-bordered">
+                        <thead class="thead-light">
+                            <tr>
+                                <th class="fw-bold">Order No</th>
+                                <th class="fw-bold">Order Price</th>
+                                <th class="fw-bold">Order Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data rows will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="orderSummaryModal" tabindex="-1" aria-labelledby="orderSummaryModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="max-width:850px !important;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title fw-bold m-0" id="orderModalLabel">Order Summary</h3>
+                <button type="button" class="btn-close  mt-1 mx-1" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="order-summary">
+                    <div class="row">
+                        <div class="col-md-2"><h6 class="m-0">Order Number</h6></div>
+                        <div class="col-md-1"><p id="orderId"></p></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2"> <h6 class="m-0">Order Date</h6> </div>
+                        <div class="col-md-2"> <p id="orderDate"></p></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2"> <h6 class="m-0">User Name</h6> </div>
+                        <div class="col-md-1"> <p id="userName">@Context.Session.GetString("Username")</p></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2"> <h6 class="m-0">Order Total</h6> </div>
+                        <div class="col-md-1"> <p id="orderTotal"></p></div>
+                    </div>
+                </div>
+                <h2 class="h4 fw-bold">Order Items</h2>
+                <div class="table-responsive">
+                    <table id="orderItemsTable" class="table table-bordered">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/js/order.js"></script>

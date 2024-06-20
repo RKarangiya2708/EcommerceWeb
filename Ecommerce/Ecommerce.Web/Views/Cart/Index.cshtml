@@ -1,0 +1,54 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .card-plain {
+        width: 1100px;
+    }
+
+    .main-raised {
+        margin-top:40px;
+    }
+    #cart-table_wrapper{
+        margin:10px;
+    }
+
+    .form-control{
+        background: fixed;
+    }
+</style
+
+<div>
+<div class="container">
+    <div class="card card-plain">
+            <div class="card-body main main-raised p-0">
+            <h3 class="card-title m-3">Shopping Cart</h3>
+            <hr />
+            <div class="table-responsive">
+                <div class="table table-shopping">
+                        <table id="cart-table" class="table table-bordered">
+                        <thead class="thead-light">
+                            <tr>
+                                <th class="fw-bold">Product No</th>
+                                <th class="fw-bold">Product</th>
+                                <th class="fw-bold">Price</th>
+                                <th class="fw-bold">Quantity</th>
+                                <th class="fw-bold">Total Price</th>
+                                <th class="fw-bold"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="d-flex flex-md-row justify-content-between align-items-center p-4 shadow rounded p-3 bg-white">
+                <h5 class="mb-3 mb-md-0 fw-bold">Total</h5>
+                <h5 id="total-price" class="mb-3 mb-md-0 fw-bold">$0.00</h5>
+                    <button onclick="PlaceOrder()" class="btn btn-success">Place Order</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script src="~/js/shoppingCart.js"></script>
